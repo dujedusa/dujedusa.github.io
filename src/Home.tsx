@@ -48,9 +48,8 @@ const Home: FunctionComponent = () => {
                     Passionate Drummer And Ocassional Live Sound Engineer.
                   </span>
                 </p>
-                <button className="btn">Download CV</button>
-                <a href="./assets/docs/CV.pdf" download="test.pdf">
-                  Download file
+                <a href="CV.pdf" download="Duje_Duša_CV.pdf">
+                  <button className="btn">Download CV</button>
                 </a>
               </div>
             </div>
