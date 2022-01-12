@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5aeccc7b.css",
+    "main.js": "/static/js/main.42a4b9bd.js",
+    "static/js/787.86e70ff7.chunk.js": "/static/js/787.86e70ff7.chunk.js",
+    "static/media/profile_photo.jpg": "/static/media/profile_photo.46170e379f3ef6dea12d.jpg",
+    "static/media/drum_set.jpg": "/static/media/drum_set.58e9a8fbc3041020e6f8.jpg",
+    "static/media/sql_logo.png": "/static/media/sql_logo.753c3adb40e9d68fb78e.png",
+    "static/media/EF_Core.png": "/static/media/EF_Core.283214e7580bc051ca01.png",
+    "static/media/infomedica_logo.svg": "/static/media/infomedica_logo.4ac7f8979d73810a7fd3ca3d37e58c8d.svg",
+    "static/media/VS_Code.svg": "/static/media/VS_Code.5f6c87ee85944898b6682f2a2a13df91.svg",
+    "static/media/react-brands.svg": "/static/media/react-brands.dbd4da253b75dfaaa802bdff94c3c5d6.svg",
+    "static/media/VS.svg": "/static/media/VS.12ef825b352c2e944cab5b52b8ee36a7.svg",
+    "static/media/NET_Core_Logo.svg": "/static/media/NET_Core_Logo.e2aac1c9344494e5c387ebba560bc230.svg",
+    "static/media/gmail.svg": "/static/media/gmail.ecd564f696c11c0550de79441ffc808b.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.a962361c451960bbd40790980ddbcf3a.svg",
+    "static/media/fb.svg": "/static/media/fb.6c5a830ed337d382773c5f97a61658d7.svg",
+    "static/media/js-square-brands.svg": "/static/media/js-square-brands.fcb90899f087f02c03e0726bd3797dd9.svg",
+    "static/media/git-alt-brands.svg": "/static/media/git-alt-brands.60d104ade1016b0e6ae22b7bb2f332d8.svg",
+    "index.html": "/index.html",
+    "static/media/logo-ionic.svg": "/static/media/logo-ionic.a1cb18f5cac33882a0b208cde959a3dd.svg",
+    "static/media/infomedica_logo_simple.svg": "/static/media/infomedica_logo_simple.5ee83f2d5196fe525cd50b930b1ee56c.svg",
+    "static/media/hamburger.svg": "/static/media/hamburger.5408e2fc1361dd528d8e23af0575f3b0.svg",
+    "static/media/gitlab-brands.svg": "/static/media/gitlab-brands.cf1fd52a8b256f533360e5ca188548e3.svg",
+    "static/media/css3-alt-brands.svg": "/static/media/css3-alt-brands.ed0f56586a94a8ae1c273058ecf684fe.svg",
+    "static/media/bitbucket-brands.svg": "/static/media/bitbucket-brands.6111e070a2c76757fba19b19a907fef8.svg",
+    "static/media/html5-brands.svg": "/static/media/html5-brands.f1f330328cef033d4fc1ded5fcbcc744.svg",
+    "static/media/angular-brands.svg": "/static/media/angular-brands.a6cfde21215e82c4a203a6a330ca7190.svg",
+    "main.5aeccc7b.css.map": "/static/css/main.5aeccc7b.css.map",
+    "main.42a4b9bd.js.map": "/static/js/main.42a4b9bd.js.map",
+    "787.86e70ff7.chunk.js.map": "/static/js/787.86e70ff7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5aeccc7b.css",
+    "static/js/main.42a4b9bd.js"
+  ]
+}

@@ -1,0 +1,13 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+ <title>Asset 1</title>
+
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="Layer_2" data-name="Layer 2">
+   <g stroke="null" id="Layer_1-2" data-name="Layer 1">
+    <path stroke="null" class="cls-1" d="m77.26293,29.96998l-26.86857,0l0,-18.86757l26.86857,0l0,18.86757zm-0.73041,88.65273l-25.40776,0l0,-77.50597l25.40776,0l0,77.50597z" fill="#e0e0e0" id="svg_1"/>
+    <rect stroke="null" class="cls-2" x="50.70739" y="11.10241" width="26.999" height="18.89239" fill="#e30613" id="svg_2"/>
+   </g>
+  </g>
+ </g>
+</svg>
