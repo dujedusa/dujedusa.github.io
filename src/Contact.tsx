@@ -1,14 +1,59 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
+import emailjs from "@emailjs/browser";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+type FormInputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const Contact: FunctionComponent = () => {
-  const [name, updateName] = useState("");
-  const [email, updateEmail] = useState("");
-  const [subject, updateSubject] = useState("");
-  const [message, updateMessage] = useState("");
+  const SERVICE = process.env.REACT_APP_SERVICE_ID as string;
+  const TEMPLATE = process.env.REACT_APP_TEMPLATE_ID as string;
+  const USER = process.env.REACT_APP_USER_ID as string;
 
-  const checkFormState = (): void => {
-    console.log(name, email, subject, message);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInputs>();
+
+  // loading button when submitting form
+  /* const loading = () => {
+    const btn = document.getElementById("submit-form-btn");
+    const spinner = document.createElement("div");
+    spinner.className = "spinner";
+
+    if (btn !== null) {
+      btn.innerText = "";
+      btn.appendChild(spinner);
+    }
+
+    setTimeout(() => {
+      if (btn !== null) {
+        btn?.removeChild(spinner);
+        btn.innerText = "Send";
+      }
+    }, 5000);
+  }; */
+
+  const submitForm: SubmitHandler<FormInputs> = (
+    formContent: FormInputs,
+    event: any
+  ) => {
+    event.preventDefault();
+    emailjs
+      .send(SERVICE, TEMPLATE, formContent, USER)
+      .then((res) => {
+        console.log("Success ", res.status, res.text);
+      })
+      .catch((err) => {
+        console.log("Failed ", err);
+      });
   };
+
   return (
     <div className="contact-container">
       <div className="row">
@@ -29,13 +74,7 @@ const Contact: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <form
-        className="contact-form"
-        onSubmit={(event) => {
-          event.preventDefault();
-          checkFormState();
-        }}
-      >
+      <form className="contact-form" onSubmit={handleSubmit(submitForm)}>
         <div className="form-container">
           <div className="row">
             <div className="col-md-6 form-group">
@@ -43,24 +82,32 @@ const Contact: FunctionComponent = () => {
               <input
                 className="form-control"
                 id="name"
-                value={name}
-                onChange={(event) => updateName(event.target.value)}
+                {...register("name", { required: true })}
               />
-              <span className="field-validation-error">
-                Please enter your name.
-              </span>
+              {errors.name && (
+                <span className="field-validation-error">
+                  Please enter your name.
+                </span>
+              )}
             </div>
             <div className="col-md-6 form-group">
               <label htmlFor="email">Your email</label>
               <input
                 className="form-control"
                 id="email"
-                value={email}
-                onChange={(event) => updateEmail(event.target.value)}
+                {...register("email", {
+                  required: true,
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Please enter a valid email address",
+                  },
+                })}
               />
-              <span className="field-validation-error">
-                Please enter your email.
-              </span>
+              {errors.email && (
+                <span className="field-validation-error">
+                  {errors.email.message}
+                </span>
+              )}
             </div>
           </div>
           <div className="row">
@@ -69,12 +116,13 @@ const Contact: FunctionComponent = () => {
               <input
                 className="form-control"
                 id="subject"
-                value={subject}
-                onChange={(event) => updateSubject(event.target.value)}
+                {...register("subject", { required: true })}
               />
-              <span className="field-validation-error">
-                Please enter your subject.
-              </span>
+              {errors.subject && (
+                <span className="field-validation-error">
+                  Please enter a subject of the message.
+                </span>
+              )}
             </div>
           </div>
           <div className="row">
@@ -85,17 +133,20 @@ const Contact: FunctionComponent = () => {
                 id="message"
                 rows={4}
                 style={{ resize: "vertical" }}
-                value={message}
-                onChange={(event) => updateMessage(event.target.value)}
+                {...register("message", { required: true })}
               />
-              <span className="field-validation-error">
-                Please enter your message.
-              </span>
+              {errors.message && (
+                <span className="field-validation-error">
+                  Please enter your message.
+                </span>
+              )}
             </div>
           </div>
           <div className="row">
             <div className="col text-center">
-              <button className="btn">Send</button>
+              <button id="submit-form-btn" className="btn">
+                Send
+              </button>
             </div>
           </div>
         </div>
