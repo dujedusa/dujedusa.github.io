@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import hamburgerMenuIcon from "./assets/hamburger.svg";
 
 const NavBar: FunctionComponent = () => {
@@ -21,29 +21,35 @@ const NavBar: FunctionComponent = () => {
   return (
     <nav className="nav-bar">
       <div className="nav-bar-main">
-        <Link className="nav-item-link" to="/">
+        <HashLink className="nav-item-link" smooth to="home#top">
           <h1>DUJE DUŠA</h1>
-        </Link>
+        </HashLink>
         <ul className="nav-items-main">
+          <HashLink className="nav-item-link" smooth to="home#top">
+            CV
+          </HashLink>
           <li>
-            <a className="nav-item-link" href="#a">
-              CV
-            </a>
-          </li>
-          <li>
-            <a className="nav-item-link" href="#a">
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#about-me-section"
+            >
               About
-            </a>
+            </HashLink>
           </li>
           <li>
-            <Link to="contact" className="nav-item-link">
+            <HashLink className="nav-item-link" smooth to="contact#top">
               Contact
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <a className="nav-item-link" href="#a">
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#testimonials-section"
+            >
               Testimonials
-            </a>
+            </HashLink>
           </li>
         </ul>
         <button className="menu-toggler" onClick={toggleMenu}>
@@ -53,24 +59,32 @@ const NavBar: FunctionComponent = () => {
       <div className="nav-bar-dropdown collapsed" id="navBarExpandable">
         <ul className="nav-items-expanded">
           <li>
-            <a className="nav-item-link" href="#a">
+            <HashLink className="nav-item-link" smooth to="home#top">
               CV
-            </a>
+            </HashLink>
           </li>
           <li>
-            <a className="nav-item-link" href="#a">
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#about-me-section"
+            >
               About
-            </a>
+            </HashLink>
           </li>
           <li>
-            <Link to="contact" className="nav-item-link">
+            <HashLink className="nav-item-link" smooth to="contact#top">
               Contact
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <a className="nav-item-link" href="#a">
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#testimonials-section"
+            >
               Testimonials
-            </a>
+            </HashLink>
           </li>
         </ul>
       </div>

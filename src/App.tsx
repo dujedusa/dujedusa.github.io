@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Contact from "./Contact";
 import Home from "./Home";
 import NavBar from "./NavBar";
@@ -6,6 +6,7 @@ import "./style.css";
 import facebookIcon from "./assets/fb.svg";
 import linkedInIcon from "./assets/linkedin.svg";
 import emailIcon from "./assets/gmail.svg";
+import { HashLink } from "react-router-hash-link";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="home" element={<Home />} />
             <Route path="contact" element={<Contact />} />
           </Routes>
         </div>
@@ -55,9 +57,9 @@ const App = () => {
                       alt="Reach the author on LinkedIn link"
                     />
                   </a>
-                  <Link className="nav-item-link" to="/contact">
+                  <HashLink className="nav-item-link" smooth to="contact#top">
                     <img src={emailIcon} alt="Mail the author link" />
-                  </Link>
+                  </HashLink>
                 </div>
               </div>
             </div>

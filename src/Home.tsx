@@ -56,7 +56,7 @@ const Home: FunctionComponent = () => {
           </div>
         </div>
       </section>
-      <section className="about-section-container">
+      <section id="about-me-section" className="about-section-container">
         <div className="about-container">
           <div className="about">
             <div className="row">
@@ -319,7 +319,10 @@ const Home: FunctionComponent = () => {
           </div>
         </div>
       </section>
-      <section className="testimonials-section-container">
+      <section
+        id="testimonials-section"
+        className="testimonials-section-container"
+      >
         <div className="testimonial-container">
           <div className="testimonials">
             <div className="testimonial-title-container">
