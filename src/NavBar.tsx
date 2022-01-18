@@ -18,16 +18,31 @@ const NavBar: FunctionComponent = () => {
     }
   };
 
+  const collapseNavBar = (): void => {
+    const expandableNavBar: HTMLElement | null =
+      document.getElementById("navBarExpandable");
+
+    if (!expandableNavBar) {
+      return;
+    }
+
+    if (!expandableNavBar.classList.contains("collapsed")) {
+      expandableNavBar.classList.add("collapsed");
+    }
+  };
+
   return (
     <nav className="nav-bar">
       <div className="nav-bar-main">
-        <HashLink className="nav-item-link" smooth to="home#top">
+        <HashLink
+          className="nav-item-link"
+          smooth
+          to="home#top"
+          onClick={collapseNavBar}
+        >
           <h1>DUJE DUŠA</h1>
         </HashLink>
         <ul className="nav-items-main">
-          <HashLink className="nav-item-link" smooth to="home#top">
-            CV
-          </HashLink>
           <li>
             <HashLink
               className="nav-item-link"
@@ -38,8 +53,12 @@ const NavBar: FunctionComponent = () => {
             </HashLink>
           </li>
           <li>
-            <HashLink className="nav-item-link" smooth to="contact#top">
-              Contact
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#technologies-section"
+            >
+              Experiences
             </HashLink>
           </li>
           <li>
@@ -49,6 +68,11 @@ const NavBar: FunctionComponent = () => {
               to="home#testimonials-section"
             >
               Testimonials
+            </HashLink>
+          </li>
+          <li>
+            <HashLink className="nav-item-link" smooth to="contact#top">
+              Contact
             </HashLink>
           </li>
         </ul>
@@ -59,22 +83,23 @@ const NavBar: FunctionComponent = () => {
       <div className="nav-bar-dropdown collapsed" id="navBarExpandable">
         <ul className="nav-items-expanded">
           <li>
-            <HashLink className="nav-item-link" smooth to="home#top">
-              CV
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="home#about-me-section"
+              onClick={collapseNavBar}
+            >
+              About
             </HashLink>
           </li>
           <li>
             <HashLink
               className="nav-item-link"
               smooth
-              to="home#about-me-section"
+              to="home#technologies-section"
+              onClick={collapseNavBar}
             >
-              About
-            </HashLink>
-          </li>
-          <li>
-            <HashLink className="nav-item-link" smooth to="contact#top">
-              Contact
+              Experiences
             </HashLink>
           </li>
           <li>
@@ -82,8 +107,19 @@ const NavBar: FunctionComponent = () => {
               className="nav-item-link"
               smooth
               to="home#testimonials-section"
+              onClick={collapseNavBar}
             >
               Testimonials
+            </HashLink>
+          </li>
+          <li>
+            <HashLink
+              className="nav-item-link"
+              smooth
+              to="contact#top"
+              onClick={collapseNavBar}
+            >
+              Contact
             </HashLink>
           </li>
         </ul>

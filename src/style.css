@@ -34,30 +34,34 @@ label {
 /* Classes */
 
 .page-container {
-  position: absolute;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   height: 100%;
+  width: 100%;
   max-height: 4.5rem;
 }
 
 .content {
-  margin-top: 4.5rem;
   padding: 4.5rem 0 4.5rem 0;
   background-color: #121212;
+  width: 100%;
 }
 
 .footer {
   background-color: #212121;
   padding: 1rem 2rem;
+  width: 100%;
 }
 
 .introductory-section-container,
@@ -103,20 +107,23 @@ label {
 
 .experiences-title-text > h1 {
   margin: 0;
+  font-size: 2.75rem;
+  font-weight: lighter;
   background-color: #121212;
   padding-bottom: 2rem;
-  padding-top: 1rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .testimonial-title-container {
-  margin-top: -6rem;
+  margin-top: -5rem;
 }
 
 .testimonial-title-text > h1 {
   margin: 0;
   background-color: #121212;
+  font-size: 2.75rem;
+  font-weight: lighter;
   padding-bottom: 1rem;
   padding-top: 2rem;
   border-top-left-radius: 10px;
@@ -234,17 +241,8 @@ label {
 .technologies > .row > .col > h1 {
   margin: 0;
   font-weight: lighter;
-  font-size: xxx-large;
+  font-size: 3rem;
   margin-bottom: 4rem;
-  align-self: center;
-  text-align: center;
-}
-
-.technologies > .row > .col > h2 {
-  margin: 0;
-  font-weight: lighter;
-  font-size: x-large;
-  margin: 4rem 0 4rem 0;
   align-self: center;
   text-align: center;
 }
@@ -253,28 +251,6 @@ label {
   width: 100px;
   height: 100px;
   margin: 1rem;
-}
-
-.section-header-badge {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: -25px;
-  overflow: overlay;
-  justify-content: center;
-  margin-top: 4rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-.section-header-badge > h1 {
-  margin: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  max-width: 20rem;
-  border-radius: 10px;
-  padding: 0.25rem;
-  color: #e0e0e0;
 }
 
 .section-header-text {
@@ -286,7 +262,7 @@ label {
 .section-header-text > h1 {
   margin: 0;
   font-weight: lighter;
-  font-size: xxx-large;
+  font-size: 2.75rem;
 }
 
 .about-main-text {
@@ -299,7 +275,7 @@ label {
 
 .about-main-text > p {
   font-weight: normal;
-  font-size: larger;
+  font-size: 1rem;
   line-height: 1.75rem;
 }
 
@@ -311,21 +287,21 @@ label {
 
 .footer-container > .row > .col > p {
   text-align: center;
-  font-size: medium;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .footer-container > .row > .col > h1 {
   margin: 1.5rem 0 0.5rem 0;
   font-weight: 500;
-  font-size: larger;
+  font-size: 1.25rem;
   text-align: center;
 }
 
 .footer-container > .row > .col > h2 {
   margin: 0;
   font-weight: lighter;
-  font-size: large;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -335,12 +311,6 @@ label {
   justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0 1.5rem 0;
-}
-
-.section-main-text {
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
 }
 
 .introductory-container,
@@ -384,7 +354,7 @@ label {
   text-align: justify;
   margin: 4rem 0;
   line-height: 2rem;
-  font-size: x-large;
+  font-size: 1.25rem;
   font-weight: lighter;
   font-style: italic;
 }
@@ -407,7 +377,7 @@ label {
   text-align: center;
   align-self: center;
   width: 100%;
-  min-width: 20rem;
+  min-width: 15rem;
 }
 
 .profile-photo {
@@ -422,7 +392,7 @@ label {
   justify-content: space-between;
   width: 100%;
   flex: 0 0 95%;
-  padding: 2rem;
+  /* padding: 2rem; */
   border-radius: 10px;
   max-width: 75rem;
 }
@@ -438,7 +408,7 @@ label {
 .introductory-text-container > h3 {
   margin-top: 2.5rem;
   font-weight: lighter;
-  font-size: large;
+  font-size: 1.25rem;
 }
 
 .introductory-text {
@@ -446,22 +416,23 @@ label {
 }
 
 .introductory-text span:first-child {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .introductory-text span:nth-child(3) {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .introductory-text span:nth-child(5) {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: lighter;
 }
 
 .nav-bar {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   padding: 0 2rem;
@@ -484,6 +455,7 @@ label {
 .nav-item-link {
   color: #e0e0e0;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .content .nav-item-link {
@@ -519,12 +491,12 @@ label {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 4rem 0 4rem 0;
+  min-height: calc(100vh - 30.2rem);
 }
 
 .contact-main-text {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -537,7 +509,7 @@ label {
 .contact-subtext,
 .contact-subtext > h2 {
   text-align: center;
-  font-size: large;
+  font-size: 1rem;
   font-weight: lighter;
   line-height: 1.75rem;
   margin-bottom: 1.5rem;
@@ -603,11 +575,12 @@ label {
   padding: 0.75rem;
   background-color: #e0e0e0;
   color: black;
-  font-size: large;
+  font-size: medium;
   border-radius: 20px;
   border: 0;
   text-align: center;
   width: 25%;
+  height: 2.75rem;
   min-width: 10rem;
 }
 
@@ -652,6 +625,7 @@ label {
     display: block;
     width: 100%;
     border-radius: 10px;
+    padding: 2rem 0;
   }
 
   .introductory-container {
@@ -659,9 +633,8 @@ label {
   }
 
   .profile-photo {
-    max-width: 15rem;
+    max-width: 13rem;
     width: 100%;
-    border-radius: 50%;
     margin-top: -180px;
   }
 
@@ -742,15 +715,27 @@ label {
 }
 
 .spinner {
+  display: block;
   border: 5px solid transparent;
-  border-top: 5px solid #212121;
-  border-right: 5px solid #212121;
-  border-left: 5px solid #212121;
+  border-top: 5px solid #121212;
+  border-right: 5px solid #121212;
+  border-left: 5px solid #121212;
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
   animation: spin 1s linear infinite;
   margin: auto;
+}
+
+.toast-success,
+.toast-failure {
+  display: block;
+  margin: 2.5rem 0.75rem 0 0.75rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  text-align: center;
+  color: #e0e0e0;
+  font-weight: bold;
 }
 
 @keyframes spin {

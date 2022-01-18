@@ -20,38 +20,64 @@ const Contact: FunctionComponent = () => {
     formState: { errors },
   } = useForm<FormInputs>();
 
-  // loading button when submitting form
-  /* const loading = () => {
-    const btn = document.getElementById("submit-form-btn");
-    const spinner = document.createElement("div");
-    spinner.className = "spinner";
-
-    if (btn !== null) {
-      btn.innerText = "";
-      btn.appendChild(spinner);
-    }
-
-    setTimeout(() => {
-      if (btn !== null) {
-        btn?.removeChild(spinner);
-        btn.innerText = "Send";
-      }
-    }, 5000);
-  }; */
+  const createToast = (
+    className: string,
+    bgColor: string,
+    innerText: string
+  ): HTMLDivElement => {
+    const toast = document.createElement("div");
+    toast.classList.add(className);
+    toast.innerText = innerText;
+    toast.style.backgroundColor = bgColor;
+    toast.id = "toast";
+    return toast;
+  };
 
   const submitForm: SubmitHandler<FormInputs> = (
     formContent: FormInputs,
     event: any
   ) => {
     event.preventDefault();
-    emailjs
-      .send(SERVICE, TEMPLATE, formContent, USER)
-      .then((res) => {
-        console.log("Success ", res.status, res.text);
-      })
-      .catch((err) => {
-        console.log("Failed ", err);
-      });
+    const btn = document.getElementById("submit-form-btn");
+    const form = document.getElementById("form");
+    const spinner = document.createElement("div");
+    const successToast = createToast(
+      "toast-success",
+      "green",
+      "Message sent successfully!"
+    );
+    const failureToast = createToast(
+      "toast-failure",
+      "darkred",
+      "Message failed to sent, try again!"
+    );
+
+    if (btn !== null && spinner !== null) {
+      spinner.classList.add("spinner");
+      btn.innerText = "";
+      (btn as HTMLButtonElement).disabled = true;
+      btn?.appendChild(spinner);
+
+      emailjs
+        .send(SERVICE, TEMPLATE, formContent, USER)
+        .then((res) => {
+          console.log("Success ", res.status, res.text);
+          form?.appendChild(successToast);
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        })
+        .catch((err) => {
+          console.log("Failed ", err);
+          btn.removeChild(spinner);
+          btn.innerText = "Send";
+          form?.appendChild(failureToast);
+          setTimeout(() => {
+            form?.removeChild(failureToast);
+            (btn as HTMLButtonElement).disabled = false;
+          }, 3000);
+        });
+    }
   };
 
   return (
@@ -75,7 +101,7 @@ const Contact: FunctionComponent = () => {
         </div>
       </div>
       <form className="contact-form" onSubmit={handleSubmit(submitForm)}>
-        <div className="form-container">
+        <div id="form" className="form-container">
           <div className="row">
             <div className="col-md-6 form-group">
               <label htmlFor="name">Your name</label>

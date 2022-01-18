@@ -109,7 +109,10 @@ const Home: FunctionComponent = () => {
           </div>
         </div>
       </section>
-      <section className="technologies-section-container">
+      <section
+        id="technologies-section"
+        className="technologies-section-container"
+      >
         <div className="technologies-container">
           <div className="technologies">
             <div className="row">
