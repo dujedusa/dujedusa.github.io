@@ -44,6 +44,7 @@ const Home: FunctionComponent = () => {
                   <br />
                   <span>Web Developer.</span>
                   <br />
+                  <br />
                   <span>
                     Passionate Drummer And Ocassional Live Sound Engineer.
                   </span>
