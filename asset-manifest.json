@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.324524fe.css",
+    "main.css": "/static/css/main.aac8d8e7.css",
     "main.js": "/static/js/main.dd6c9038.js",
     "static/js/787.86e70ff7.chunk.js": "/static/js/787.86e70ff7.chunk.js",
     "static/media/profile_photo.jpg": "/static/media/profile_photo.46170e379f3ef6dea12d.jpg",
@@ -26,12 +26,12 @@
     "static/media/bitbucket-brands.svg": "/static/media/bitbucket-brands.6111e070a2c76757fba19b19a907fef8.svg",
     "static/media/html5-brands.svg": "/static/media/html5-brands.f1f330328cef033d4fc1ded5fcbcc744.svg",
     "static/media/angular-brands.svg": "/static/media/angular-brands.a6cfde21215e82c4a203a6a330ca7190.svg",
-    "main.324524fe.css.map": "/static/css/main.324524fe.css.map",
+    "main.aac8d8e7.css.map": "/static/css/main.aac8d8e7.css.map",
     "main.dd6c9038.js.map": "/static/js/main.dd6c9038.js.map",
     "787.86e70ff7.chunk.js.map": "/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.324524fe.css",
+    "static/css/main.aac8d8e7.css",
     "static/js/main.dd6c9038.js"
   ]
 }
