@@ -597,6 +597,74 @@ label {
   background-color: transparent;
 }
 
+.spinner {
+  display: block;
+  border: 5px solid transparent;
+  border-top: 5px solid #121212;
+  border-right: 5px solid #121212;
+  border-left: 5px solid #121212;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+.toast-success,
+.toast-failure {
+  display: block;
+  margin: 2.5rem 0.75rem 0 0.75rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  text-align: center;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.attributions {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.toggle-modal-text-btn {
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  font-size: larger;
+  font-weight: lighter;
+  margin: 0 0 1.5rem 0;
+}
+
+.toggle-modal-text-btn:hover {
+  color: darkgray;
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #212121;
+  margin: 1rem;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 767.98px) {
@@ -609,7 +677,54 @@ label {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .infomedica-logo-simple {
+    display: inherit;
+    width: 100%;
+    max-width: 5rem;
+    height: auto;
+  }
+
+  .infomedica-logo {
+    display: none;
+  }
+
+  .about-container {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .testimonial {
+    margin: 3rem 1.5rem 0 1.5rem;
+  }
+}
+
 @media only screen and (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 120px;
+  }
+
+  .container.right {
+    left: 0;
+  }
+
+  .container.left::after,
+  .container.right::after {
+    left: 74px;
+  }
+
+  .container.left::before,
+  .container.right::before {
+    left: 90px;
+    width: 30px;
+    height: 10px;
+    top: calc(50% + 33px);
+  }
+
   .form-container {
     padding: 0 0.75rem 0 0.75rem;
   }
@@ -642,52 +757,9 @@ label {
   .introductory-text-container {
     text-align: center;
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .infomedica-logo-simple {
-    display: inherit;
-    width: 100%;
-    max-width: 5rem;
-    height: auto;
-  }
-
-  .infomedica-logo {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .about-container {
-    padding: 0 1rem 0 1rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .timeline::after {
-    left: 90px;
-  }
-
-  .container {
-    width: 100%;
-    padding-left: 120px;
-  }
-
-  .container.right {
-    left: 0;
-  }
-
-  .container.left::after,
-  .container.right::after {
-    left: 74px;
-  }
-
-  .container.left::before,
-  .container.right::before {
-    left: 90px;
-    width: 30px;
-    height: 10px;
-    top: calc(50% + 33px);
+  .testimonial {
+    margin: 3rem 5rem 0 5rem;
   }
 }
 
@@ -702,40 +774,11 @@ label {
   }
 }
 
-@media only screen and (max-width: 767.98px) {
-  .testimonial {
-    margin: 3rem 5rem 0 5rem;
+@media only screen and (max-width: 420px) {
+  .attributions {
+    line-height: 1.25rem;
+    font-size: small;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .testimonial {
-    margin: 3rem 1.5rem 0 1.5rem;
-  }
-}
-
-.spinner {
-  display: block;
-  border: 5px solid transparent;
-  border-top: 5px solid #121212;
-  border-right: 5px solid #121212;
-  border-left: 5px solid #121212;
-  border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  animation: spin 1s linear infinite;
-  margin: auto;
-}
-
-.toast-success,
-.toast-failure {
-  display: block;
-  margin: 2.5rem 0.75rem 0 0.75rem;
-  padding: 0.75rem;
-  border-radius: 5px;
-  text-align: center;
-  color: #e0e0e0;
-  font-weight: bold;
 }
 
 @keyframes spin {
