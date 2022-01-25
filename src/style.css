@@ -758,9 +758,9 @@ label {
     text-align: center;
   }
 
-  .testimonial {
+  /* .testimonial {
     margin: 3rem 5rem 0 5rem;
-  }
+  } */
 }
 
 @media only screen and (max-width: 650px) {
